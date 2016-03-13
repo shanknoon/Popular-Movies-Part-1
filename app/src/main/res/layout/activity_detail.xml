@@ -6,9 +6,10 @@
 
 <RelativeLayout
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
+        android:contentDescription="@string/desc"
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vote Average"
+        android:text="@string/vote_average"
         android:layout_toRightOf="@+id/imageView1"
         android:layout_toEndOf="@+id/imageView1"
         android:id="@+id/textViewVote"
@@ -35,7 +36,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Release Date"
+        android:text="@string/release_date"
         android:layout_below="@+id/textViewVote2"
         android:layout_toRightOf="@+id/imageView1"
         android:layout_toEndOf="@+id/imageView1"
@@ -55,7 +56,6 @@
         android:id="@+id/txtMovieDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Movie Description comes here"
         android:layout_below="@+id/imageView1"
         android:layout_marginTop="10dp" />
 

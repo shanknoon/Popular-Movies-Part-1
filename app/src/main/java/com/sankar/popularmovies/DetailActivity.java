@@ -27,6 +27,7 @@ public class DetailActivity extends AppCompatActivity {
         Picasso.with(getApplicationContext()).load(movie.getImage_path()).placeholder(R.drawable.placeholder).into(imageView);
         imageView.getLayoutParams().height = 500; // OR
         imageView.getLayoutParams().width = 500;
+        imageView.setContentDescription(movie.getTitle());
         textViewVoteAverage.setText(Double.toString(movie.getVote_average())+"/10");
         textViewReleaseDate.setText(movie.getRelease_date());
         txtMovieDesc.setText(movie.getOverview());

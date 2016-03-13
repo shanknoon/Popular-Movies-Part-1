@@ -62,15 +62,15 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.sortByPopularity && sortBy.equalsIgnoreCase(MovieConstants.HIGHEST_RATED))
+        if (id == R.id.sortByPopularity)
         {
             sortBy = MovieConstants.POPULARITY;
-            new FetchMoviesTask().execute(MovieConstants.POPULARITY);
+            new FetchMoviesTask().execute(sortBy);
             return true;
-        }else if(id == R.id.sortByRated && sortBy.equalsIgnoreCase(MovieConstants.POPULARITY))
+        }else if(id == R.id.sortByRated)
         {
             sortBy = MovieConstants.HIGHEST_RATED;
-            new FetchMoviesTask().execute(MovieConstants.HIGHEST_RATED);
+            new FetchMoviesTask().execute(sortBy);
             return true;
         }
 
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
 
-            String movieJsonStr = null;
+            String movieJsonStr = "";
 
             try {
                 String baseUrl = "http://api.themoviedb.org/3/discover/movie";
@@ -133,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
                         reader.close();
                     } catch (IOException e) {
                         Log.e("FetchMoviesTask", "error", e);
-                        return null;
                     }
                 }
             }
